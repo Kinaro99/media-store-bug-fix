@@ -6,12 +6,26 @@ import static org.junit.Assert.*;
 public class Problem3Test {
     @Test
     public void catchTheBugInBook() {
-        // quiz
+        BookFiction testOne = new BookFiction("bookOne", "Abbie", "Comedy");
+        //Book testTwo = new BookFiction("bookTwo", "Kinaro", "Comedy");
+        Book testTwo = new BookFiction(testOne);
+
+        testOne.setAuthor("Kinaro");
+        testOne.setTitle("bookTwo");
+
+        assertEquals(testOne, testTwo);
     }
 
     @Test
     public void catchTheBugInMovie() {
-        // quiz
+        MovieComedy testOne = new MovieComedy("G", "ComedyOne");
+        Movie testTwo = new MovieComedy(testOne);
+
+        testOne.setTitle("OneComedy");
+        testOne.setRating("R");
+
+        assertEquals(testOne, testTwo);
+
     }
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
